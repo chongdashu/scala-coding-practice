@@ -19,6 +19,7 @@ system for managing projects.
 |-- build.sbt
 |-- lib
 |-- project
+    |- plugins.sbt
 |-- src
 |   |-- main
 |   |   |-- java
