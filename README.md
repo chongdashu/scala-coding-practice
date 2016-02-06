@@ -136,3 +136,7 @@ class Engine {
 
 ## References
 
+Some useful resources.
+
++ ["Why Scala?" (2014) Clint's Software Development Corner](https://softwarecorner.wordpress.com/2014/12/31/why-scala/)
+
