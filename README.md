@@ -7,6 +7,45 @@ $ brew install scala
 $ brew install sbt
 ```
 
+### Simple Build Tools (`sbt`)
+
+It appears that people promote using the Simple Build Tools (`sbt`)
+system for managing projects.
+
+#### Project Structure
+
+```
+.
+|-- build.sbt
+|-- lib
+|-- project
+|-- src
+|   |-- main
+|   |   |-- java
+|   |   |-- resources
+|   |   |-- scala
+|   |-- test
+|       |-- java
+|       |-- resources
+|       |-- scala
+|-- target
+```
+(Credits to [Alvin Alexander](http://alvinalexander.com/scala/how-to-create-sbt-project-directory-structure-scala))
+
+#### Quick-Start
+
++ Run using `sbt run`
++ Generate Eclipse `.project` files using `sbt eclipse`
+
+#### Plugins
+
+Place plugins (like the sbteclipse plugin)  into the `./project/plugins.sbt` file.
+
+#### Dependencies
+
+Depedencies go into the `./build.sbt` file.
+
+
 ### Command Line
 
 Assuming a structure as follows:
