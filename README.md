@@ -206,4 +206,5 @@ class Engine {
 Some useful resources.
 
 + ["Why Scala?" (2014) Clint's Software Development Corner](https://softwarecorner.wordpress.com/2014/12/31/why-scala/)
++ ["Java Developer's Scala Cheatsheet" (2015) Marko Bonaci](http://mbonaci.github.io/scala/)
 
