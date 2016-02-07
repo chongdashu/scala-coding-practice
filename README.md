@@ -86,6 +86,33 @@ The `-cp bin` command makes the classpath the `bin` folder.
 
 ### Snippets
 
+#### `List` operations
+
+`::` is a prepend operator; it adds the argument to the front of the `List`
+
+```scala
+List("suffix").::("prefix")
+```
+```
+List("prefix", "suffix")
+```
+
+When using any method that ends in `:` without the `.` diretive, it is right associative.
+
+```scala
+List("suffix") :: "prefix"  // WRONG: :: is not an operator of the String class
+"prefix" :: List("suffix")  // RIGHT
+```
+
+```
+List("prefix", "suffix")    // Yes, this is equivialent to the above!
+```
+
+#### `List`, `ListBuffer`
+
+`List` is immutable, while `ListBuffer` is mutable.
+
+
 #### `var` vs. `val`
 
 The different is that objects assigned to a `var` can be replaced; objects assigned to a `val` can not.
