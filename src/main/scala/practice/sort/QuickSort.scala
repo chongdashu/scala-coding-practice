@@ -1,6 +1,6 @@
-package com.chongdashu.scala.practice
+package com.chongdashu.scala.practice.sort
 
-object QuickSort {
+object QuickSort extends BaseSort {
     
     def sort(list : List[Int]) : List[Int] = {
         return List();
