@@ -12,18 +12,20 @@ object RadixSort extends BaseSort {
         
         var listBuffer : ListBuffer[Int] = ListBuffer.empty ++ list;
         
+        // Find the max number of digits amongst all numbers in the list
         val maxDigits = (listBuffer.map { x => x.toString().length }).reduce(Math.max);
-        
-        println("maxDigits=" + maxDigits);
         
         for (digit <- 1 to maxDigits) {
            var index_digit_pairs : ListBuffer[(Int, Int)] = listBuffer.map { number => (listBuffer.indexOf(number), getNthDigitFromRight(number, digit)) }
-           index_digit_pairs = index_digit_pairs.sortWith( (a :(Int, Int), b : (Int, Int)) => a._2 < b._2);
+           
+           // (a) More verbose, but explicit way.
+           // index_digit_pairs = index_digit_pairs.sortWith( (a :(Int, Int), b : (Int, Int)) => a._2 < b._2);
+           
+           // (b) More succinct way
+           index_digit_pairs = index_digit_pairs.sortBy(x => x._2);
+           
            listBuffer = index_digit_pairs.map( pair => listBuffer(pair._1));
-           println(index_digit_pairs)
         }
-        
-        
         
         return listBuffer.toList;
     }
