@@ -14,11 +14,15 @@ object QuickSort extends BaseSort {
         
         val listBuffer : ListBuffer[Int] = ListBuffer.empty ++ list;
         
-        // Step (1): Randomly select a pivotIndex and pivot
+        // Step (1): Randomly select a pivotIndex 
+        
         // (a)          Usually it's the last element
         // var pivotIndex : Int = listBuffer.length - 1;
+        
         // (b)          Can be a random value too
         var pivotIndex : Int = Random.nextInt(listBuffer.length);
+        
+        // Step (2): Set the pivotValue
         var pivotValue = listBuffer(pivotIndex);
         
         val leftOfPivot : ListBuffer[Int] = ListBuffer.empty;
