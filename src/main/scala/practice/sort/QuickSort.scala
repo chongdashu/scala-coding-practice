@@ -1,6 +1,7 @@
 package com.chongdashu.scala.practice.sort
 
 import scala.collection.mutable.ListBuffer
+import scala.util.Random
 
 object QuickSort extends BaseSort {
     
@@ -14,8 +15,10 @@ object QuickSort extends BaseSort {
         val listBuffer : ListBuffer[Int] = ListBuffer.empty ++ list;
         
         // Step (1): Randomly select a pivotIndex and pivot
-        //           Usually it's the last element
-        var pivotIndex : Int = listBuffer.length - 1;
+        // (a)          Usually it's the last element
+        // var pivotIndex : Int = listBuffer.length - 1;
+        // (b)          Can be a random value too
+        var pivotIndex : Int = Random.nextInt(listBuffer.length);
         var pivotValue = listBuffer(pivotIndex);
         
         val leftOfPivot : ListBuffer[Int] = ListBuffer.empty;
@@ -36,7 +39,7 @@ object QuickSort extends BaseSort {
             }
         }
         
-        return  (leftOfPivot ++ centerOfPivot).toList ++ sort(rightOfPivot.toList)
+        return  sort((leftOfPivot ++ centerOfPivot).toList) ++ sort(rightOfPivot.toList)
         
         
     }
