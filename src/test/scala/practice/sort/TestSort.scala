@@ -26,7 +26,6 @@ abstract class TestSort extends TestCase{
     var integerListWithLargeDifferencesWithDuplicates = List(888, 1, 21, 23, 155, 50, 97, 155, 199, 255, 888, 1495, 9999);
     var integerListWithLargeDifferencesWithDuplicatesSorted = List(1, 21, 23, 50, 97, 155, 155, 199, 255, 888, 888, 1495, 9999);
     
-    
     /**
      * Sorting an empty list should just return the empty list.
      */
