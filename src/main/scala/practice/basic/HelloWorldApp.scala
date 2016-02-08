@@ -1,4 +1,5 @@
-package com.chongdashu.scala.practice
+package main.scala.practice.basic
+
 
 /**
  * A different Hello World example, this time

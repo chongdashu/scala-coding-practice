@@ -1,4 +1,4 @@
-package com.chongdashu.scala.practice
+package main.scala.practice.basic
 
 /**
  * A simple Hello World application using Scala.

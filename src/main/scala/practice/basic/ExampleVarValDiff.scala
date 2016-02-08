@@ -1,4 +1,4 @@
-package com.chongdashu.scala.practice
+package main.scala.practice.basic
 
 class Person(age_ : Int, testScore_ : GradeReport) {
     val age = age_;
