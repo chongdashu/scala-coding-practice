@@ -39,6 +39,10 @@ object QuickSort extends BaseSort {
             }
         }
         
+        if (leftOfPivot.isEmpty && rightOfPivot.isEmpty) {
+            return centerOfPivot.toList;
+        }
+        
         return  sort((leftOfPivot ++ centerOfPivot).toList) ++ sort(rightOfPivot.toList)
         
         
