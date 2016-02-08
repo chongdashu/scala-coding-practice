@@ -7,7 +7,7 @@ import com.chongdashu.scala.practice.sort.QuickSort
 import com.chongdashu.scala.practice.sort.BubbleSort
 import junit.framework.Test
 
-class TestSort extends TestCase{
+abstract class TestSort extends TestCase{
     
     var Sort : BaseSort = BubbleSort
     
