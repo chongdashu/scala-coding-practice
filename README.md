@@ -86,6 +86,18 @@ The `-cp bin` command makes the classpath the `bin` folder.
 
 ### Snippets
 
+#### Initializing a mutable map
+
+Do the following:
+
+```scala
+var myMap = scala.collection.mutable.Map[String, Int]()
+```
+
+#### Reading Input
+
+Use `scala.io.StdIn.readInt()`, `scala.io.StdIn.readFloat()`, etc.
+
 #### `List` operations
 
 `::` is a prepend operator; it adds the argument to the front of the `List`
