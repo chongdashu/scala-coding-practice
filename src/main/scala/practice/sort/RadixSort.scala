@@ -41,6 +41,12 @@ object RadixSort extends BaseSort {
         
         return 0;
     }
+    
+    def sort(array : Array[Int]) : Array[Int] = {
+         var result = array;
+         
+         return result;
+     }
 }
 
 

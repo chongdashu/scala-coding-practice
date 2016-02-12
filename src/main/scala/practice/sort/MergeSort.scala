@@ -54,6 +54,13 @@ object MergeSort extends BaseSort  {
         
     }
     
+     def sort(array : Array[Int]) : Array[Int] = {
+         var result = array;
+         
+         return result;
+     }
+
+    
 }
 
 

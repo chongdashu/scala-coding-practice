@@ -2,14 +2,13 @@ package test.scala.practice.sort
 
 import junit.framework.TestCase
 import org.junit.Assert._
-import com.chongdashu.scala.practice.sort.BaseSort
-import com.chongdashu.scala.practice.sort.QuickSort
 import com.chongdashu.scala.practice.sort.BubbleSort
 import junit.framework.Test
+import com.chongdashu.scala.practice.sort.BaseSort
 
 abstract class TestSort extends TestCase{
     
-    var Sort : BaseSort = BubbleSort
+    var Sort : BaseSort = BubbleSort;
     
     var singleIntegerList = List(1);
     

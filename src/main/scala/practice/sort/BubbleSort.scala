@@ -34,6 +34,13 @@ object BubbleSort extends BaseSort {
         return listBuffer.toList;
         
     }
+     
+     def sort(array : Array[Int]) : Array[Int] = {
+         var result = array;
+         
+         return result;
+     }
+
 }
 
 
