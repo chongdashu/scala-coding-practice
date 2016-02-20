@@ -33,4 +33,15 @@ class TestQuestion8_9 extends TestCase {
         var actual : Set[String] = Question8_9.getParens(3);
         assertEquals(expected, actual);
     }
+    
+    def testFourParenPairs = {
+        var expected : Set[String] = Set(
+            "(((())))", "(()(()))", "((())())", "()()()()",
+            "((()))()", "()(())()", "()()(())", "()((()))",
+            "(())()()", "(()()())"
+        );
+        var actual : Set[String] = Question8_9.getParens(4);
+        println(actual.size);
+        assertEquals(expected, actual);
+    }
 }

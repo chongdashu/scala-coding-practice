@@ -16,10 +16,16 @@ object Question8_9 {
             return Set[String]("()");
         }
         
-         var parens : Set[String] = Set.empty;
+        var result: Set[String] = Set.empty;
         
+        var prevParens : Set[String] = getParens(nPairs-1);
+        for (parens <- prevParens) {
+            result += (parens + "()");
+            result += ("()" + parens);
+            result += (s"($parens)");
+        }
         
-        return parens;
+        return result;
         
     }
 }
