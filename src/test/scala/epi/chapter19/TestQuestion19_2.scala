@@ -10,6 +10,23 @@ class TestQuestion9_2 extends TestCase {
     override def setUp() = {
     }
     
+    def testGetNodesAndEdges() = {
+        var expected_v : Set[Int] = Set(0,1,2,3);
+        var expected_e : Set[Tuple2[Int, Int]] = Set(
+            (1,3), (2,3),
+            (3,1), (3,2)
+        );
+        var maze : String = 
+            "1 0" + "\n" +
+            "0 0";
+        
+        var actual_v = Question19_2.getNodesAndEdges(maze)._1;
+        var actual_e = Question19_2.getNodesAndEdges(maze)._2;
+        
+        assertEquals(expected_v, actual_v);
+        assertEquals(expected_e, actual_e);
+    }
+    
     def testConvert2x2MazeToArray() = {
          var maze : String = 
             "1 0" + "\n" +

@@ -9,17 +9,49 @@ object Question19_2 {
         
         // TODO: Build v and e correctly; currently hard-coded for 2 x 2
         // test case.
-        var v : Set[Int] = Set(0,1,2,3);
-        var e : Set[Tuple2[Int, Int]] = Set(
-            (0,1), (0,2),
-            (1,0), (1,3),
-            (2,0), (2,3),
-            (3,1), (3,2)
-        );
+        
+        
+        var v = getNodesAndEdges(maze)._1;
+        var e = getNodesAndEdges(maze)._2;
         
         var path : List[Int] = depthFirstSearch(v, e, startIndex, endIndex);
             
         return path.toArray;
+    }
+    
+    def getNodesAndEdges(maze : String) : Tuple2[Set[Int], Set[Tuple2[Int, Int]]] = {
+        var mazeArray : Array[Array[Int]] = convertMazeToArray(maze);
+        var nrow = mazeArray.length;
+        var ncol = mazeArray(0).length;
+        
+        var v : Set[Int] = Set.empty;
+        for (i <- (0 to nrow*ncol-1)) {
+            v += i;
+        }
+        
+        var e : Set[Tuple2[Int,Int]] = Set.empty;
+        
+        for (row <- 0 to nrow-1) {
+            for (col <- 0 to ncol-1) {
+                var cur = row * ncol + col;
+                if (mazeArray(row)(col) == 0) {
+                    for ( (deltaX, deltaY) <- Set((1,0), (-1,0), (0, -1), (0, 1)) ) {
+                        var neighborX = row + deltaX;
+                        var neighborY = col + deltaY;
+                        if (neighborX >= 0 && neighborX < ncol && neighborY >= 0 && neighborY < nrow) {
+                            if (mazeArray(neighborX)(neighborY) == 0) {
+                                var nei = neighborX * ncol + neighborY;
+                                e += Tuple2(cur, nei);
+                                e += Tuple2(nei, cur);
+                            }
+                        }
+                    }  
+                }
+                
+            }
+        }
+        
+        return (v, e);
     }
     
     def convertMazeToArray(maze : String) : Array[Array[Int]] = {
@@ -69,7 +101,6 @@ object Question19_2 {
               for (Tuple2(CurrentIndex, nextIndex) <- e) {
                   if (!visited.contains(nextIndex)) {
                       s.push(nextIndex);
-    //                  println(s"For currentIndex=${CurrentIndex}: Pushing ${nextIndex}");
                       println(s"parentOf(${nextIndex}) = ${CurrentIndex}");
                       parentOf(nextIndex) = CurrentIndex;   
                   }
