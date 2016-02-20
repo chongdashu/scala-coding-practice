@@ -7,10 +7,6 @@ object Question19_2 {
  
     def searchMaze(maze : String, startIndex : Int, endIndex : Int) : Array[Int] = {
         
-        // TODO: Build v and e correctly; currently hard-coded for 2 x 2
-        // test case.
-        
-        
         var v = getNodesAndEdges(maze)._1;
         var e = getNodesAndEdges(maze)._2;
         

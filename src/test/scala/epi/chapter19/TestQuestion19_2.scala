@@ -5,7 +5,7 @@ import org.junit.Assert._
 import junit.framework.TestCase
 import main.scala.epi.chapter19.Question19_2
 
-class TestQuestion9_2 extends TestCase {
+class TestQuestion19_2 extends TestCase {
     
     override def setUp() = {
     }
