@@ -37,7 +37,7 @@ class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right 
      *  - LCA(C, F) is A
      *  - LCA(C, H) is B 
      */
-    def getLCAUsingParent(node1 : BinaryTreeNode[T], node2 : BinaryTreeNode[T]) : BinaryTreeNode[T] = {
+    def getLCAUsingParentLinks(node1 : BinaryTreeNode[T], node2 : BinaryTreeNode[T]) : BinaryTreeNode[T] = {
         
         
         
