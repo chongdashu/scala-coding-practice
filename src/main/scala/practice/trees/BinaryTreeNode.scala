@@ -2,6 +2,47 @@ package main.scala.practice.trees
 
 class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right :BinaryTreeNode[T]) {
     
+    var parent : BinaryTreeNode[T] = null;
+    
+    def BinaryTreeNode(value_ : T, left_ : BinaryTreeNode[T], right_ : BinaryTreeNode[T]) {
+        this.value = value_;
+        this.left = left_;
+        this.right = right_;
+        if (this.left != null) {
+            left.parent = this;
+        }
+        if (this.right != null) {
+            right.parent = this;
+        }
+        
+    }
+    
+    /**
+     * Retrieves the lowest common ancestor of two given nodes.
+     * e.g.,
+     * {{{
+     *             [A]             depth = 0
+     *           /     \
+     *         [B]     [E]         depth = 1
+     *        /   \       \
+     *      [C]   [D]      [F]     depth = 2
+     *           /
+     *         [G]                 depth = 3
+     *            \
+     *             [H]             depth = 4
+     * }}}
+     * 
+     *  - LCA(C, D) is B
+     *  - LCA(B, E) is A
+     *  - LCA(C, F) is A
+     *  - LCA(C, H) is B 
+     */
+    def getLCAUsingParent(node1 : BinaryTreeNode[T], node2 : BinaryTreeNode[T]) : BinaryTreeNode[T] = {
+        
+        
+        
+        return null;
+    }
     
     /**
      * Retrieves the lowest common ancestor of two given nodes.
@@ -48,7 +89,9 @@ class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right 
         
         
         // Brute-force version below
-        // Has O(n^2) time complexity
+        // Has O(n^2) time complexity in worse case.
+        // Because at each node, we are searching and checking both subtrees (size=n)
+
        
        
 //        // Base case:
