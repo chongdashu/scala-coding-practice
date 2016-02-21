@@ -4,21 +4,22 @@ class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right 
     
     var parent : BinaryTreeNode[T] = null;
     
-    def BinaryTreeNode(value_ : T, left_ : BinaryTreeNode[T], right_ : BinaryTreeNode[T]) {
-        this.value = value_;
-        this.left = left_;
-        this.right = right_;
-        if (this.left != null) {
-            left.parent = this;
-        }
-        if (this.right != null) {
-            right.parent = this;
-        }
-        
+    if (this.left != null) {
+        left.parent = this;
     }
+    if (this.right != null) {
+        right.parent = this;
+    }
+        
+
     
     /**
-     * Retrieves the lowest common ancestor of two given nodes.
+     * Retrieves the lowest common ancestor of two given nodes;
+     * uses the `BinaryTreeNode.parent` links to compute this.
+     * 
+     *  - Time complexity:  O(h): iteratively climb up the tree
+     *  - Space complexity: O(1): only need to store parent each time.
+     *  
      * e.g.,
      * {{{
      *             [A]             depth = 0
@@ -39,9 +40,65 @@ class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right 
      */
     def getLCAUsingParentLinks(node1 : BinaryTreeNode[T], node2 : BinaryTreeNode[T]) : BinaryTreeNode[T] = {
         
+        if (node1 == this || node2 == this) {
+            // Base case: if node1 or node2 are the current node, return this
+            return this;
+        }
         
+        var node1Depth : Int= 0;
+        var node2Depth : Int = 0;
         
-        return null;
+        var node1Parent = node1;
+        while (node1Parent != null) {
+            node1Parent = node1Parent.parent;
+            node1Depth += 1;
+        }
+        
+        var node2Parent = node2;
+        while (node2Parent != null) {
+            node2Parent = node2Parent.parent;
+            node2Depth += 1;
+        }
+        
+        println(s"node1Depth=${node1Depth}");
+        println(s"node2Depth=${node2Depth}");
+        
+        var candidateNode1  = node1;
+        var candidateNode2  = node2;
+        
+        var depthDelta = node1Depth - node2Depth;
+        if (depthDelta > 0) {
+           // node1 is deeper
+//           println(s"Node ${node1.value} is deeper by ${depthDelta}");
+           for (i <- 1 to depthDelta) {
+               candidateNode1 = candidateNode1.parent;
+           }
+            
+        }
+        else {
+           // node2 is deeper
+            // node1 is deeper
+           for (i <- 1 to Math.abs(depthDelta)) {
+//               println(s"Node ${node2.value} is deeper by ${depthDelta}");
+               candidateNode2 = candidateNode2.parent;
+           }
+        }
+        
+        // Now both candidate nodes are at equal level
+        
+       while (candidateNode1 != null && candidateNode2 != null && 
+               candidateNode1 != candidateNode2) {
+           
+//           println(s"candidateNode1 <- ${candidateNode1.value}.parent = ${candidateNode1.parent.value}");
+//           println(s"candidateNode2 <- ${candidateNode2.value}.parent = ${candidateNode2.parent.value}");
+           
+           candidateNode1 = candidateNode1.parent;
+           candidateNode2 = candidateNode2.parent;
+           
+           
+       }
+        
+       return candidateNode1;
     }
     
     /**
