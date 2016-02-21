@@ -41,7 +41,6 @@ class TestQuestion8_9 extends TestCase {
             "(())()()", "(()()())"
         );
         var actual : Set[String] = Question8_9.getParens(4);
-        println(actual.size);
         assertEquals(expected, actual);
     }
 }

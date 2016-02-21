@@ -8,8 +8,10 @@ class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right 
             return List(value);
         }
         
+        var pathLeft : List[T] =  if (left == null) List.empty else left.traverseInOrder;
+        var pathRight : List[T] = if (right == null) List.empty else right.traverseInOrder;
         
-        var path : List[T] = List.empty;
-        return path;
+        
+        return pathLeft ++ List(value) ++ pathRight;
     }
 }
