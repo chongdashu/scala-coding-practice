@@ -39,7 +39,7 @@ class TestBinaryTree extends TestCase {
                                        null))));
     }
     
-    def testTraverseExampleTree() = {
+    def testTraverseInOrderExampleTree() = {
         val expected : List[Int] = List(
              28, 271, 0, 6, 561, 17, 3, 314,
              2, 401, 641, 1, 257, 6, 271, 28
@@ -47,5 +47,24 @@ class TestBinaryTree extends TestCase {
         val actual : List[Int] = exampleTree.traverseInOrder;
         assertEquals(expected, actual);
     }
+    
+    def testTraversePreOrderExampleTree() = {
+        val expected : List[Int] = List(
+             314, 6, 271, 28, 0, 561, 3, 17,
+             6, 2, 1, 401, 641, 257, 271, 28
+        ); 
+        val actual : List[Int] = exampleTree.traversePreOrder;
+        assertEquals(expected, actual);
+    }
+    
+    def testTraversePostOrderExampleTree() = {
+        val expected : List[Int] = List(
+            28, 0, 271, 17, 3, 561, 6, 641, 401, 257, 1, 2, 28, 271,  6, 314
+        ); 
+        val actual : List[Int] = exampleTree.traversePostOrder;
+        assertEquals(expected, actual);
+    }
+    
+    
     
 }
