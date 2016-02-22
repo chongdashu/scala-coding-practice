@@ -60,8 +60,8 @@ class BinaryTreeNode[T](var value : T, var left : BinaryTreeNode[T], var  right 
             node2Depth += 1;
         }
         
-        println(s"node1Depth=${node1Depth}");
-        println(s"node2Depth=${node2Depth}");
+//        println(s"node1Depth=${node1Depth}");
+//        println(s"node2Depth=${node2Depth}");
         
         var candidateNode1  = node1;
         var candidateNode2  = node2;

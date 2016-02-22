@@ -66,7 +66,7 @@ object Question19_2 {
     }
 
   def depthFirstSearch(v: Set[Int], e: Set[(Int, Int)], startIndex: Int, endIndex: Int) : List[Int] = {
-      println(s"dfs, start=${startIndex}, end=${endIndex}");
+//      println(s"dfs, start=${startIndex}, end=${endIndex}");
       var s : Stack[Int] = new Stack();
       var visited : HashMap[Int, Boolean] = new HashMap;
       var parentOf : HashMap[Int, Int] = new HashMap;
@@ -75,15 +75,15 @@ object Question19_2 {
       
       while (!s.isEmpty) {
           val CurrentIndex = s.pop();
-          println(s"currentIndex=${CurrentIndex}");
+//          println(s"currentIndex=${CurrentIndex}");
           if (CurrentIndex == endIndex) {
-              println(s"CurrentIndex={CurrentIndex}==endIndex={endIndex}!");
+//              println(s"CurrentIndex={CurrentIndex}==endIndex={endIndex}!");
               // rebuild path
               var path : ListBuffer[Int] = ListBuffer();
               var curr : Int = CurrentIndex;
               while (parentOf.contains(curr)) {
                   path += curr;
-                  println(s"parentOf(${curr})=${parentOf(curr)}");
+//                  println(s"parentOf(${curr})=${parentOf(curr)}");
                   curr = parentOf(curr);
               }
               
@@ -97,7 +97,7 @@ object Question19_2 {
               for (Tuple2(CurrentIndex, nextIndex) <- e) {
                   if (!visited.contains(nextIndex)) {
                       s.push(nextIndex);
-                      println(s"parentOf(${nextIndex}) = ${CurrentIndex}");
+//                      println(s"parentOf(${nextIndex}) = ${CurrentIndex}");
                       parentOf(nextIndex) = CurrentIndex;   
                   }
                   

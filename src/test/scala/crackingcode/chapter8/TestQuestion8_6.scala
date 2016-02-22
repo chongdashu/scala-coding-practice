@@ -25,7 +25,7 @@ class TestQuestion8_6 extends TestCase {
                 "Move disk 1 from T1 to T2"
         )
 
-        println(expected.mkString("\n"));
+//        println(expected.mkString("\n"));
         assertEquals(expected.mkString, actual.mkString);
     }
     
@@ -42,7 +42,7 @@ class TestQuestion8_6 extends TestCase {
                 
         )
 
-        println(expected.mkString("\n"));
+//        println(expected.mkString("\n"));
         assertEquals(expected.mkString, actual.mkString);
     }
   

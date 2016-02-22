@@ -19,7 +19,7 @@ object Question8_1 {
         
         for (i <- 4 to n) {
             TT(i) = TT(i-1) + TT(i-2) + TT(i-3);
-            println("TT("+i+")=" + TT(i));
+//            println("TT("+i+")=" + TT(i));
         }
         
 //        for (i <- 4 to n) {

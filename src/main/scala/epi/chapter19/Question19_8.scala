@@ -19,7 +19,7 @@ object Question19_8 {
         
         while (!queue.isEmpty) {
             var curr = queue.dequeue();
-            println(s"curr=${curr}");
+//            println(s"curr=${curr}");
             d = d - (curr);
             if (curr == end) {
                 // Goal State:
@@ -29,7 +29,7 @@ object Question19_8 {
                 productionSequence += next;
                 while (parentOf.contains(next)) {
                     // While there's a parent to follow...
-                    println(s"Traceback: $next -> ${parentOf(next)}");
+//                    println(s"Traceback: $next -> ${parentOf(next)}");
                     next = parentOf(next);
                     productionSequence += next;
                 }
@@ -51,7 +51,7 @@ object Question19_8 {
                     if (d.contains(neighborWord)) {
                         neighbors += neighborWord;
                         parentOf(neighborWord) = curr;
-                        println(s"parentOf(${curr})=$neighborWord");
+//                        println(s"parentOf(${curr})=$neighborWord");
                     }
                 }
             }

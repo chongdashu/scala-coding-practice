@@ -15,7 +15,7 @@ object Question8_9 {
 
   def getParensHelper(nLeftParensRemaining: Int, nRightParensRemaining: Int, prefix: String, balancedParenStrings: Set[String]) : Unit = {
       
-      println(s"nLeft=${nLeftParensRemaining}, nRight=${nRightParensRemaining}");
+//      println(s"nLeft=${nLeftParensRemaining}, nRight=${nRightParensRemaining}");
       if (nLeftParensRemaining == 0 && nRightParensRemaining == 0) {
            balancedParenStrings += (prefix);
       }

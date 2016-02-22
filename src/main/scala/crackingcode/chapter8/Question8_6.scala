@@ -22,7 +22,7 @@ object Question8_6 {
             towers(0).addDisk(nDisks-i);
         }
         
-        towers(0).print();
+//        towers(0).print();
         move(nDisks, towers(0), towers(2), towers(1));
         
         return moves.toArray;
@@ -41,7 +41,7 @@ object Question8_6 {
             
             move(n-1, towerFrom, towerBuffer, towerTo);
             var m = towerFrom.popDiskTo(towerTo);
-            println(m);
+//            println(m);
             moves += m;
 
             move(n-1, towerBuffer, towerTo, towerFrom);
@@ -54,7 +54,7 @@ object Question8_6 {
     
     def main(args : Array[String]) : Unit = {
         var tower : Tower = new Tower(0, Stack(1,2,3));
-        tower.print();
+//        tower.print();
     } 
 }
 
