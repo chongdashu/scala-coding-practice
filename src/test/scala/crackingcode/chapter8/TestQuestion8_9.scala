@@ -4,11 +4,12 @@ import junit.framework.TestCase
 import org.junit.Assert._
 import main.scala.crackingcode.chapter8.Question8_7
 import main.scala.crackingcode.chapter8.Question8_9
+import scala.collection.mutable.Set;
 
 class TestQuestion8_9 extends TestCase {
   
     def testZeroParenPairs = {
-        var expected : Set[String] = Set.empty;
+        var expected : Set[String] = Set("");
         var actual : Set[String] = Question8_9.getParens(0);
         assertEquals(expected, actual);
     }
@@ -38,7 +39,8 @@ class TestQuestion8_9 extends TestCase {
         var expected : Set[String] = Set(
             "(((())))", "(()(()))", "((())())", "()()()()",
             "((()))()", "()(())()", "()()(())", "()((()))",
-            "(())()()", "(()()())"
+            "(())()()", "(()()())", "(()())()", "((()()))",
+            "()(()())", "(())(())"
         );
         var actual : Set[String] = Question8_9.getParens(4);
         assertEquals(expected, actual);
